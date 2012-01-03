@@ -32,7 +32,7 @@ function rtp_get_cycle_slider() {
     $slider_html .= '</div>';
 
     /* Uncomment following line if using pagination in the slider */
-    $slider_html .= '<div class="rtp-cycle-pagination"><a href="#" id="rtp-prev-cycle" class="previous-cycle"><span>'. __( 'Prev', 'rtPanel' ) . '</span></a><a href="#" id="rtp-next-cycle" class="next-cycle"><span>'. __( 'Prev', 'rtPanel' ) . '</span></a><div id="rtp-cycle-nav" class="rtp-pagination"></div></div>';
+    $slider_html .= '<div class="rtp-cycle-pagination"><a href="#" id="rtp-prev-cycle" class="previous-cycle"><span>'. __( 'Prev', 'rtPanel' ) . '</span></a><a href="#" id="rtp-next-cycle" class="next-cycle"><span>'. __( 'Next', 'rtPanel' ) . '</span></a><div id="rtp-cycle-nav" class="rtp-pagination"></div></div>';
 
     $slider_html .= '</div>';
     return $slider_html;
