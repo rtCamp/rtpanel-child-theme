@@ -11,10 +11,10 @@
  * @since rtPanelChild 1.0
  */
 function rtp_custom_theme_options( $theme_pages ) {
-    $theme_pages['custom_theme_options'] = array(
-                                    'menu_title' => __( 'Custom Theme Options', 'rtPanel' ),
-                                    'menu_slug' => 'custom_theme_options'
-                                );
+    $theme_pages['custom_theme_options'] = array( 
+        'menu_title' => __( 'Custom Theme Options', 'rtPanel' ), 
+        'menu_slug' => 'custom_theme_options' 
+    );
     
     return $theme_pages;
 }
@@ -27,10 +27,10 @@ add_filter( 'rtp_add_theme_pages', 'rtp_custom_theme_options' );
  */
 function rtp_custom_theme_default_values() {
     $default_values = array(
-                        'custom_text'      => '',
-                        'custom_textarea'  => '',
-                        'custom_image_id'  => '',
-                    );
+        'custom_text'      => '',
+        'custom_textarea'  => '',
+        'custom_image_id'  => '',
+    );
 
     if ( !get_option( 'custom_theme_options' ) ) {
         update_option( 'custom_theme_options', $default_values );
@@ -48,7 +48,7 @@ function rtp_custom_theme_default_values() {
 }
 
 // Get the extended custom theme options from database
-$rtp_custom_theme_options = ( get_option( 'custom_theme_options' ) ) ? get_option( 'custom_theme_options' ) : rtp_custom_theme_default_values(); // Ned Theme Options
+$rtp_custom_theme_options = ( get_option( 'custom_theme_options' ) ) ? get_option( 'custom_theme_options' ) : rtp_custom_theme_default_values();
 
 /** 
  * Register the extended custom theme options settings api
@@ -131,7 +131,7 @@ function rtp_custom_theme_option_contextual_help ( $contextual_help, $screen_id,
     }
     return $contextual_help;
 }
-add_filter('contextual_help', 'rtp_custom_theme_option_contextual_help', 10, 3);
+add_filter( 'contextual_help', 'rtp_custom_theme_option_contextual_help', 10, 3 );
 
 /** 
  * Extended Custom Theme Options Metabox Markup

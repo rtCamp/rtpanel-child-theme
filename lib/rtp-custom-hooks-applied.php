@@ -11,6 +11,10 @@
  * @since rtPanelChild 1.0
  */
 function rtp_remove_parent_hooks() {
+    //remove_action( 'rtp_hook_after_logo', 'rtp_blog_description' ); // Remove Tagline
+    //remove_custom_background(); // Remove Bckground Option from Admin Menu
+    //remove_custom_image_header(); // Remove Header Option from Admin Menu
+
     //remove_action( 'rtp_hook_after_header','rtp_default_nav_menu' );
     //remove_action( 'rtp_hook_post_meta_top','rtp_default_post_meta' ); // Post Meta Top
     //remove_action( 'rtp_hook_post_meta_bottom','rtp_default_post_meta' ); // Post Meta Bottom
@@ -34,30 +38,26 @@ add_action( 'init', 'rtp_remove_parent_hooks' );
 //add_filter( 'rtp_default_image_path', create_function( '', 'return "' . RTP_CHILD_IMG . '/default.png";' ) );
 
  /**
-  * Add any custom scripts using this function.
+  * Add any custom scripts/styles using this function.
+  * The 'wp_enqueue_scripts' hooks should be used to add both styles and scripts.
+  * For more info visit :- http://wpdevel.wordpress.com/2011/12/12/use-wp_enqueue_scripts-not-wp_print_styles-to-enqueue-scripts-and-styles-for-the-frontend/
   * 
   * @since rtPanelChild 1.0
   */
-function rtp_add_scripts() {
-    //wp_enqueue_script( 'rtp-custom-script', RTP_CHILD_JS . '/rtp-custom-script.js' );
+function rtp_custom_scripts_and_styles() {
+    /* Include Scripts */
+    //wp_enqueue_script( 'rtp-custom-script', RTP_CHILD_JS . '/rtp-custom-scripts.js', array( 'jquery' ), '', true );
     
     /* Uncomment the following lines if using the jQuery Cycle Plugin for the slider */
     //wp_enqueue_script( 'jquery-cycle', RTP_CHILD_JS . '/jquery.cycle.js', array( 'jquery' ), '', true );
     //wp_enqueue_script( 'rtp-cycle-slideshow', RTP_CHILD_JS . '/rtp-cycle-slideshow.js', array( 'jquery', 'jquery-cycle' ), '', true );
-}
-add_action( 'wp_enqueue_scripts', 'rtp_add_scripts' );
-
- /**
-  * Add any custom styles using this function.
-  * 
-  * @since rtPanelChild 1.0
-  */
-function rtp_add_styles() {
+    
+    /* Include styles */
     //wp_enqueue_style( 'rtp-custom-style', RTP_CHILD_CSS . '/custom-style.css' );
 }
-add_action( 'wp_print_styles', 'rtp_add_styles' );
+add_action( 'wp_enqueue_scripts', 'rtp_custom_scripts_and_styles' );
 
- /**
+/**
   * Remove rtPanel Default Sidebars using this function.
   * 
   * @since rtPanelChild 1.0

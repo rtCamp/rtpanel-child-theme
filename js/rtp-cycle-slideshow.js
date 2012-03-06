@@ -2,8 +2,8 @@
  * jQuery Cycle Plugin Scripts
  */
 
-jQuery(document).ready( function(){
-    jQuery('#rtp-cycle-slider .rtp-cycle-slider-container').cycle({
+jQuery( document ).ready( function() {
+    jQuery( '#rtp-cycle-slider .rtp-cycle-slider-container' ).cycle( {
         activePagerClass: 'active', // class name used for the active pager element 
         after:         null,  // transition callback (scope set to element that was shown):  function(currSlideElement, nextSlideElement, options, forwardFlag) 
         allowPagerClickBubble: false, // allows or prevents click event on pager anchors from bubbling 
@@ -59,15 +59,14 @@ jQuery(document).ready( function(){
         timeoutFn:     null,  // callback for determining per-slide timeout value:  function(currSlideElement, nextSlideElement, options, forwardFlag) 
         updateActivePagerLink: null, // callback fn invoked to update the active pager link (adds/removes activePagerClass style) 
         width:         null   // container width (if the 'fit' option is true, the slides will be set to this width as well) 
-    });
+    } );
     
     /* Uncomment the lines in the function for slider pagination */
-    function pagerFactory(idx, slide) {
+    function pagerFactory( idx, slide ) {
     /*    var img;
-        img = jQuery(slide).find('img').attr('src');
+        img = jQuery( slide ).find( 'img' ).attr( 'src' );
 
-        //return '<span><a href="#">'+(idx+1)+'<img width="50" height="50" src="'+img+'" /></a></span>';
-        return '<span><a href="#">'+(idx+1)+'</a></span>'; */
+        //return '<span><a href="#">' + ( idx + 1 ) + '<img width="50" height="50" src="' + img + '" /></a></span>';
+        return '<span><a href="#">' + ( idx + 1 ) + '</a></span>'; */
     }
-
-});
+} );

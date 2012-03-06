@@ -34,7 +34,7 @@ function rtp_post_types_custom_box() {
 function rtp_posts_inner_custom_box( $post ) { 
   wp_nonce_field( plugin_basename( __FILE__ ), $post->post_type . '_noncename' ); ?>
   <input name="_custom_checkbox" type="hidden" value="0" />
-  <input id="_custom_checkbox" name="_custom_checkbox" type="checkbox" value="1" <?php checked( get_post_meta( $post->ID, '_custom_checkbox', true) ); ?> tabindex="4" /> <label for="_custom_checkbox" class="selectit"><?php _e( 'Custom Checkbox' ); ?></label><br /><br />
+  <input id="_custom_checkbox" name="_custom_checkbox" type="checkbox" value="1" <?php checked( get_post_meta( $post->ID, '_custom_checkbox', true) ); ?> tabindex="4" /> <label for="_custom_checkbox" class="selectit"><?php _e( 'Custom Checkbox', 'rtPanel' ); ?></label><br /><br />
   <label for="_custom_text" class="selectit">Custom Text:</label><input type="text" id="_custom_text" name="_custom_text" value="<?php echo get_post_meta( $post->ID, '_custom_text', true ); ?>" size="25" /><?php
 }
 

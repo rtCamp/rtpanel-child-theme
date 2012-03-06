@@ -6,9 +6,74 @@ Description: An Example Child rtPanel Child Theme with standard examples.
 Version: 1.0
 Author: rtCamp
 Author URI: http://rtcamp.com
+Tags: black, blue, gray, orange, white, light, two-columns, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
 Contributors: rtCampers ( http://rtcamp.com/about/rtcampers/ )
 License: GNU General Public License, v2 (or newer)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 @import url("../rtpanel/style.css");
+
+/* Overwrite Default rtPanel Style */
+h1, h2, h3, h4, h5, h6 { letter-spacing: 1px; }
+    
+/* Default Colors */
+select, input, textarea { color: #111; }
+
+/* Default Links */
+a, a:active, a:visited { color: #2361A1; }
+a:hover { color: #D54E21; }
+
+/* Heading Links */
+h1 a, h1 a:visited, h1 a:active,
+h2 a, h2 a:visited, h2 a:active { color: #111; }
+h1 a:hover, h2 a:hover { color: #2361A1; }
+
+/* Default Fonts */
+body { font-family: Georgia, "Times New Roman", Times, serif; }
+.post-content { font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif; }
+.post-title, .rtp-edit-link,
+#respond form, select, input, textarea, button { font-family: Georgia, "Times New Roman", Times, serif; }
+
+/* Post Heading Style */
+.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 { margin: 0 0 12px; }
+
+/* Layout */
+
+
+/* Specific Pages */
+
+
+/* Header */
+
+
+/* Navigation */
+
+
+/* Post Meta */
+
+
+/* Post Loop */
+
+
+/* Read More Links */
+
+
+/* Search Form and Search Page */
+
+
+/* Paged Navigation */
+
+
+/* Comments */
+
+
+/* Sidebar */
+
+
+/* Footer */
+
+
+/* Extra CSS for additonal elements, Plugins, fixes */
+
+/* IE Fixing */
