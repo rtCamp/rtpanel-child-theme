@@ -14,11 +14,16 @@ function rtp_remove_parent_hooks() {
     //remove_action( 'rtp_hook_after_logo', 'rtp_blog_description' ); // Remove Tagline
     //remove_custom_background(); // Remove Bckground Option from Admin Menu
     //remove_custom_image_header(); // Remove Header Option from Admin Menu
-
+    
+    //remove_action( 'rtp_hook_single_pagination', 'rtp_default_single_pagination' );
+    //remove_action( 'rtp_hook_archive_pagination', 'rtp_default_archive_pagination' );
+    
     //remove_action( 'rtp_hook_after_header','rtp_default_nav_menu' );
     //remove_action( 'rtp_hook_post_meta_top','rtp_default_post_meta' ); // Post Meta Top
+    //remove_action( 'rtp_hook_post_meta_top_comment', 'rtp_comment_count' );
     //remove_action( 'rtp_hook_post_meta_bottom','rtp_default_post_meta' ); // Post Meta Bottom
     //remove_action( 'rtp_hook_end_post_meta_top', 'rtp_edit_link' );
+    
     //remove_filter( 'rtp_readmore', 'rtp_readmore_braces' );
     //remove_filter( 'the_excerpt', 'rtp_no_ellipsis' );
     //remove_filter( 'gallery_style', 'rtp_remove_gallery_css' );
@@ -36,6 +41,12 @@ add_action( 'init', 'rtp_remove_parent_hooks' );
 //add_filter( 'rtp_header_image_width', create_function( '', 'return 940;' ) );
 //add_filter( 'rtp_header_image_height', create_function( '', 'return 100;' ) );
 //add_filter( 'rtp_default_image_path', create_function( '', 'return "' . RTP_CHILD_IMG . '/default.png";' ) );
+//add_filter( 'rtp_search_placeholder', create_function( '', 'return "' . __( 'Search', 'rtPanel' ) . '";' ) );
+//add_filter( 'rtp_name_placeholder', create_function( '', 'return "' . __( 'Name', 'rtPanel' ) . '";' ) );
+//add_filter( 'rtp_email_placeholder', create_function( '', 'return "' . __( 'Email', 'rtPanel' ) . '";' ) );
+//add_filter( 'rtp_website_placeholder', create_function( '', 'return "' . __( 'Website', 'rtPanel' ) . '";' ) );
+//add_filter( 'rtp_comment_placeholder', create_function( '', 'return "' . __( 'Type your comment here', 'rtPanel' ) . '";' ) );
+
 
  /**
   * Add any custom scripts/styles using this function.
