@@ -92,3 +92,16 @@ function rtp_empty_search_handling( $query_vars ) {
     return $query_vars;
 }
 //add_filter( 'request', 'rtp_empty_search_handling' );
+
+/**
+  * Show Google Analytics code in Header
+  * 
+  * @since rtPanelChild 2.0
+  */
+function rtp_google_analytics() {
+    $theme_options = get_option( 'theme_options' );
+    if ( !empty( $theme_options['rtp_google_analytics'] ) ) {
+        echo $theme_options['rtp_google_analytics'];
+    }
+}
+//add_action( 'wp_head', 'rtp_google_analytics', 99 );
