@@ -46,7 +46,8 @@ add_action( 'init', 'rtp_remove_parent_hooks' );
 //add_filter( 'rtp_email_placeholder', create_function( '', 'return "' . __( 'Email', 'rtPanel' ) . '";' ) );
 //add_filter( 'rtp_website_placeholder', create_function( '', 'return "' . __( 'Website', 'rtPanel' ) . '";' ) );
 //add_filter( 'rtp_comment_placeholder', create_function( '', 'return "' . __( 'Type your comment here', 'rtPanel' ) . '";' ) );
-
+//add_filter( 'rtp_og_content', 'rtp_child_og_content' );
+//add_filter( 'rtp_viewport', create_function( '', 'return "width=1024";' ) );
 
  /**
   * Add any custom scripts/styles using this function.
@@ -80,14 +81,14 @@ function rtp_remove_parent_sidebar(){
 add_action( 'widgets_init', 'rtp_remove_parent_sidebar', 11 );
 
 /**
-  * Google Analytics code
+  * Redirecting empty search to search page instead of blog page
   * 
-  * @since rtPanelChild 1.0
+  * @since rtPanelChild 2.0
   */
-function rtp_google_analytics() {
-    $theme_options = get_option( 'theme_options' );
-    if ( !empty( $theme_options['rtp_google_analytics'] ) ) {
-        echo $theme_options['rtp_google_analytics'];
+function rtp_empty_search_handling( $query_vars ) {
+    if( isset( $_GET['s'] ) && empty( $_GET['s'] ) ) {
+        $query_vars['s'] = " ";
     }
+    return $query_vars;
 }
-add_action( 'wp_head', 'rtp_google_analytics', 99 );
+//add_filter( 'request', 'rtp_empty_search_handling' );
