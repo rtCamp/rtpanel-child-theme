@@ -96,7 +96,7 @@ function theme_options_options_page( $pagehook ) {
                     </div>
                     <br class="clear"/>
                     <input class="button-primary" value="<?php _e( 'Save All Changes', 'rtPanel' ); ?>" name="rtp_submit" type="submit" />
-                    <input class="button-link" value="<?php _e( 'Reset All Custom Theme Option Settings', 'rtPanel' ); ?>" name="rtp_reset" type="submit" />
+                    <input class="button-link" value="<?php _e( 'Reset All Theme Option Settings', 'rtPanel' ); ?>" name="rtp_reset" type="submit" />
                 </div>
 
                 <script type="text/javascript">
