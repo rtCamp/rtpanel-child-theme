@@ -78,3 +78,16 @@ function rtp_remove_parent_sidebar(){
     //unregister_sidebar( 'footer-widgets' );
 }
 add_action( 'widgets_init', 'rtp_remove_parent_sidebar', 11 );
+
+/**
+  * Google Analytics code
+  * 
+  * @since rtPanelChild 1.0
+  */
+function rtp_google_analytics() {
+    $theme_options = get_option( 'theme_options' );
+    if ( !empty( $theme_options['rtp_google_analytics'] ) ) {
+        echo $theme_options['rtp_google_analytics'];
+    }
+}
+add_action( 'wp_head', 'rtp_google_analytics', 99 );
