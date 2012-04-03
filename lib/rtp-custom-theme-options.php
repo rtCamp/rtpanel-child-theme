@@ -7,7 +7,7 @@
 
 /** 
  * Adds a Theme Options Tab to rtPanel Theme Options
- * 
+ * @param string $theme_pages
  * @since rtPanelChild 1.0
  */
 function rtp_theme_options( $theme_pages ) {
@@ -125,21 +125,36 @@ function rtp_theme_options_screen_options() {
 }
 add_action( 'theme_options_metaboxes', 'rtp_theme_options_screen_options' );
 
-/** 
- * Extended Theme Options Contextual Help
- * 
- * @since rtPanelChild 1.0
+/**
+ * Adds rtPanel Contextual help for Theme Options
+ *
+ * @return string
+ *
+ * @since rtPanelChild 2.0
  */
-function rtp_custom_theme_option_contextual_help ( $contextual_help, $screen_id, $screen ) {
-    if( 'appearance_page_theme_options' == $screen_id ){
-        $contextual_help = '<p>' . __( 'Google Analytics Integration', 'rtPanel' ) . '</p>';
-        $contextual_help .= '<p>' . __( 'Theme Options', 'rtPanel' ) . '</p>';
-    }
-    return $contextual_help;
-}
-add_filter( 'contextual_help', 'rtp_custom_theme_option_contextual_help', 10, 3 );
+function rtp_child_theme_options_help() {
+    $rtp_google_analytics_help = '<p>' . __( 'Add Google Analytics to the theme. <br />Add Google Analytics code to given textarea which will appear in Head Section of your Theme.', 'rtPanel' ) . '</p>';
+    $rtp_theme_option_help = '<p>' . __( 'Theme Options Support Help.', 'rtPanel' ) . '</p>';
+    $sidebar = '<p><strong>' . __( 'For more information, <br />you can always visit:', 'rtPanel' ) . '</strong></p>' .
+		'<p>' . __( '<a href="http://rtpanel.com" target="_blank" title="rtPanel Official Page">rtPanel Official Page</a>', 'rtPanel' ) . '</p>' .
+		'<p>' . __( '<a href="http://rtpanel.com/docs" target="_blank" title="rtPanel Documentation">rtPanel Documentation</a>', 'rtPanel' ) . '</p>' .
+		'<p>' . __( '<a href="http://rtpanel.com/support" target="_blank" title="rtPanel Forum">rtPanel Forum</a>', 'rtPanel' ) . '</p>';
 
-/** 
+    $screen = get_current_screen();
+    if ( method_exists( $screen, 'add_help_tab' ) ) {
+        // WordPress 3.3
+        $screen->add_help_tab( array( 'title' => __( 'Google Analytics', 'rtPanel' ), 'id' => 'rtp_google_analytics_help', 'content' => $rtp_google_analytics_help ) );
+        $screen->add_help_tab( array( 'title' => __( 'Theme Options', 'rtPanel' ), 'id' => 'rtp-theme-options-help', 'content' => $rtp_theme_option_help ) );
+        $screen->set_help_sidebar( $sidebar );
+    } else {
+        // WordPress 3.2
+        add_contextual_help( $screen, $rtp_google_analytics_help . $sidebar );
+        add_contextual_help( $screen, $rtp_theme_option_help . $sidebar );
+    }
+}
+add_action( 'load-appearance_page_theme_options', 'rtp_child_theme_options_help' );
+
+/**
  * Extended Google Analytics Metabox Markup
  * 
  * @since rtPanelChild 1.0
