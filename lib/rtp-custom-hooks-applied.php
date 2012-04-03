@@ -104,4 +104,4 @@ function rtp_google_analytics() {
         echo $theme_options['rtp_google_analytics'];
     }
 }
-//add_action( 'wp_head', 'rtp_google_analytics', 99 );
+add_action( 'wp_head', 'rtp_google_analytics', 99 );
