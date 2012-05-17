@@ -20,9 +20,10 @@ function rtp_remove_parent_hooks() {
     
     //remove_action( 'rtp_hook_after_header','rtp_default_nav_menu' );
     //remove_action( 'rtp_hook_post_meta_top','rtp_default_post_meta' ); // Post Meta Top
-    //remove_action( 'rtp_hook_post_meta_top_comment', 'rtp_comment_count' );
+    //remove_action( 'rtp_hook_post_meta_top_comment', 'rtp_comment_count' ); // Post Meta Top Comment Count
     //remove_action( 'rtp_hook_post_meta_bottom','rtp_default_post_meta' ); // Post Meta Bottom
     //remove_action( 'rtp_hook_end_post_meta_top', 'rtp_edit_link' );
+    //remove_action( 'rtp_hook_comments', 'rtp_default_comments' );
     
     //remove_filter( 'rtp_readmore', 'rtp_readmore_braces' );
     //remove_filter( 'the_excerpt', 'rtp_no_ellipsis' );
@@ -48,6 +49,7 @@ add_action( 'init', 'rtp_remove_parent_hooks' );
 //add_filter( 'rtp_comment_placeholder', create_function( '', 'return "' . __( 'Type your comment here', 'rtPanel' ) . '";' ) );
 //add_filter( 'rtp_og_content', 'rtp_child_og_content' );
 //add_filter( 'rtp_viewport', create_function( '', 'return "width=1024";' ) );
+//add_filter( 'rtp_footer_widgets_per_row', create_function( '', 'return 4;' ) );
 
  /**
   * Add any custom scripts/styles using this function.
