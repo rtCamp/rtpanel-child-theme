@@ -136,9 +136,9 @@ function rtp_child_theme_options_help() {
     $rtp_google_analytics_help = '<p>' . __( 'Add Google Analytics to the theme. <br />Add Google Analytics code to given textarea which will appear in Head Section of your Theme.', 'rtPanel' ) . '</p>';
     $rtp_theme_option_help = '<p>' . __( 'Theme Options Support Help.', 'rtPanel' ) . '</p>';
     $sidebar = '<p><strong>' . __( 'For more information, <br />you can always visit:', 'rtPanel' ) . '</strong></p>' .
-		'<p>' . __( '<a href="http://rtpanel.com" target="_blank" title="rtPanel Official Page">rtPanel Official Page</a>', 'rtPanel' ) . '</p>' .
-		'<p>' . __( '<a href="http://rtpanel.com/docs" target="_blank" title="rtPanel Documentation">rtPanel Documentation</a>', 'rtPanel' ) . '</p>' .
-		'<p>' . __( '<a href="http://rtpanel.com/support" target="_blank" title="rtPanel Forum">rtPanel Forum</a>', 'rtPanel' ) . '</p>';
+		'<p>' . __( '<a href="http://rtcamp.com/rtpanel/" target="_blank" title="rtPanel Official Page">rtPanel Official Page</a>', 'rtPanel' ) . '</p>' .
+		'<p>' . __( '<a href="http://rtcamp.com/rtpanel/docs/" target="_blank" title="rtPanel Documentation">rtPanel Documentation</a>', 'rtPanel' ) . '</p>' .
+		'<p>' . __( '<a href="http://rtcamp.com/support/forum/rtpanel/" target="_blank" title="rtPanel Forum">rtPanel Forum</a>', 'rtPanel' ) . '</p>';
 
     $screen = get_current_screen();
     if ( method_exists( $screen, 'add_help_tab' ) ) {
