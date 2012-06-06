@@ -12,30 +12,64 @@ License: GNU General Public License, v2 (or newer)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+/*
+Color Palette:
+    Black: #111
+    Gray ~ Light: #999
+    Gray ~ Dark: #666
+    Gray ~ More Dark: #333
+
+    Body Color: #333
+
+    Link: #0279B5
+    Link Hover / Link Active: #CD3517
+
+    Common Links ~ .rtp-common-link
+        Link: #666
+        Link Hover: #111
+
+    Border: #DDD
+    Border Hover / Focus: #999
+*/
+
 @import url("../rtpanel/style.css");
 
-/* Overwrite Default rtPanel Style */
-h1, h2, h3, h4, h5, h6 { letter-spacing: 0px; }
-    
+/* Default Fonts */
+body { font: 0.875em/1.5em 'Open Sans', sans-serif; }
+pre,code,kbd,samp,tt,var { font-family: monospace; }
+h1,h2,h3,h4,h5,h6 { font-family: 'PT Serif', serif; }
+.tagline,#reply-title small,.rtp-thoughts { font-family: 'Open Sans', sans-serif; }
+
 /* Default Colors */
 select, input, textarea { color: #111; }
 
+/* Placeholder */
+:-moz-placeholder { color: #666; }
+::-webkit-input-placeholder { color: #666; }
+
+/* Webkit Validation Bubble */
+::-webkit-validation-bubble-message { padding: 5px; font-size: 12px; }
+
 /* Default Links */
-a, a:active, a:visited { color: #2361A1; }
-a:hover { color: #D54E21; }
+a, a:active, a:visited, .rtp-thoughts a, .rtp-thoughts a:active, .rtp-thoughts a:visited { color: #0279B5; text-decoration: none; }
+a:hover, .rtp-thoughts a:hover { color: #CD3517; text-decoration: underline; }
 
 /* Heading Links */
-h1 a, h1 a:visited, h1 a:active,
-h2 a, h2 a:visited, h2 a:active { color: #111; }
-h1 a:hover, h2 a:hover { color: #2361A1; }
+h1 a, h1 a:visited, h1 a:active, h2 a, h2 a:visited, h2 a:active { color: #111; text-decoration: none; }
+h1 a:hover, h2 a:hover { color: #CD3517; text-decoration: none; }
 
-/* Default Fonts */
-body { font-family: sans-serif; }
-pre, code, kbd, samp, tt, var { font-family: monospace; }
-h1, h2, h3, h4, h5, h6 { font-family: serif; }
+/* Generic Links */
+.rtp-common-link, .rtp-common-link:visited, .rtp-common-link:active, .rtp-common-link span, .rtp-common-link span:visited, .rtp-common-link span:active,
+.rtp-common-link a, .rtp-common-link a:visited, .rtp-common-link a:active { color: #666; }
+.rtp-common-link:hover, .rtp-common-link span:hover, .rtp-common-link a:hover { color: #111; }
 
-/* Post Heading Style */
-.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 { margin: 0 0 12px; }
+/* Heading Style */
+h1{font-size:28px;line-height:1.5em;font-weight:400}
+h2{font-size:24px;line-height:1.75em;font-weight:400}
+h3{font-size:20px;line-height:1.5em;font-weight:400}
+h4{font-size:16px;line-height:1.3125em}
+h5{font-size:14px;line-height:1.5em}
+h6{font-size:12px;line-height:1.75em}
 
 /* Layout */
 
@@ -47,7 +81,7 @@ h1, h2, h3, h4, h5, h6 { font-family: serif; }
 
 
 /* Navigation */
-#rtp-nav-menu a { font-variant: normal; }
+
 
 /* Post Meta */
 
@@ -76,3 +110,47 @@ h1, h2, h3, h4, h5, h6 { font-family: serif; }
 /* Extra CSS for additonal elements, Plugins, fixes */
 
 /* IE Fixing */
+
+/* Responsive Structure */
+@media screen and (max-width: 960px) {
+    
+}
+
+/* iPad Portrait 768 x 1024 */
+@media screen and (max-width: 768px) {
+    
+}
+
+@media screen and (max-width: 640px) {
+    
+}
+
+/* Kindle Portrait 600 x 1024 */
+@media screen and (max-width: 600px) {
+    
+}
+
+/* Nicer Android landscape 515 x 295 */
+@media screen and (max-width: 515px) {
+    
+}
+
+/* iPhone Landscape 480 x 320 */
+@media screen and (max-width: 480px) {
+    
+}
+
+/* Smartphones (portrait) & iPhone Portrait 320 x 480 & Crappy Android landscape 320 x 240 */
+@media screen and (max-width: 320px) {
+    
+}
+
+/* Nicer Android Portrait 295 x 515 */
+@media screen and (max-width: 295px) {
+    
+}
+
+/* Crappy Android Portrait 240 x 320 */
+@media screen and (max-width: 240px) {
+    
+}
