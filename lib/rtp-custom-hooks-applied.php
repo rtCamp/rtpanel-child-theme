@@ -49,7 +49,6 @@ add_action( 'init', 'rtp_remove_parent_hooks' );
 //add_filter( 'rtp_comment_placeholder', create_function( '', 'return "' . __( 'Type your comment here', 'rtPanel' ) . '";' ) );
 //add_filter( 'rtp_og_content', 'rtp_child_og_content' );
 //add_filter( 'rtp_viewport', create_function( '', 'return "width=1024";' ) );
-//add_filter( 'rtp_footer_widgets_per_row', create_function( '', 'return 4;' ) );
 
  /**
   * Add any custom scripts/styles using this function.
@@ -59,6 +58,10 @@ add_action( 'init', 'rtp_remove_parent_hooks' );
   * @since rtPanelChild 1.0
   */
 function rtp_custom_scripts_and_styles() {
+    
+    /* Remove Google Open Sans Web Font */
+    //wp_dequeue_style( 'rtp-google-open-sans' );
+    
     /* Include Scripts */
     //wp_enqueue_script( 'rtp-custom-script', RTP_CHILD_JS . '/rtp-custom-scripts.js', array( 'jquery' ), '', true );
     
@@ -69,7 +72,7 @@ function rtp_custom_scripts_and_styles() {
     /* Include styles */
     //wp_enqueue_style( 'rtp-custom-style', RTP_CHILD_CSS . '/custom-style.css' );
 }
-add_action( 'wp_enqueue_scripts', 'rtp_custom_scripts_and_styles' );
+add_action( 'wp_enqueue_scripts', 'rtp_custom_scripts_and_styles', 11 );
 
 /**
   * Remove rtPanel Default Sidebars using this function.
