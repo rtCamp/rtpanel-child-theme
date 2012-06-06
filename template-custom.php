@@ -6,11 +6,11 @@
  *
  * @package rtPanel
  *
- * @since rtPanelChild 1.0
+ * @since rtPanelChild 2.0
  */
 get_header(); ?>
 
-    <div id="content" class="custom-page">
+    <section id="content" role="main" class="rtp-grid-8 rtp-custom-page">
         <?php rtp_hook_begin_content(); ?>
         
         <?php
@@ -19,58 +19,44 @@ get_header(); ?>
                 while( have_posts() ) {
                     the_post(); ?>
 
-                    <div <?php post_class( 'rtp-custom-box' ); ?>>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class( 'rtp-custom-box' ); ?>>
                         <?php rtp_hook_begin_post(); ?>
 
-                        <div class="post-title">
+                        <header class="post-header clearfix">
                             <?php rtp_hook_begin_post_title(); ?>
 
-                                <h1><?php the_title(); ?></h1>
-
+                                <h1 class="post-title"><?php the_title(); ?></h1>
+                                        
                             <?php rtp_hook_end_post_title(); ?>
 
-                            <div class="clear"></div>
-                        </div><!-- .post-title -->
+                            <?php rtp_hook_post_meta( 'top' ); ?>
 
-                        <?php rtp_hook_post_meta( 'top' ); ?>
+                        </header><!-- .post-title -->
 
-                        <div class="post-content">
-                            
+                        <div class="post-content clearfix">
                             <?php rtp_hook_begin_post_content(); ?>
 
                             <?php the_content( __( 'Read More &rarr;', 'rtPanel' ) ); ?>
 
                             <?php rtp_hook_end_post_content(); ?>
 
-                            <div class="clear"></div>
                         </div><!-- .post-content -->
 
                         <?php rtp_hook_post_meta( 'bottom' ); ?>
 
                         <?php rtp_hook_end_post(); ?>
-                    </div><!-- .rtp-post-box --><?php
 
-                } /* End of While Loop */
-                
-            } else {
-                /* If there are no posts to display */ ?>
-                <div id="post-0" <?php post_class('rtp-custom-box'); ?>>
-                    <div class="hentry rtp-not-found">
-                        <?php rtp_hook_begin_post(); ?>
+                    </article><!-- .rtp-post-box --><?php
 
-                        <div class="post-content">
-                            <p><?php _e( 'Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post.', 'rtPanel' ); ?></p>
-                            <?php get_search_form(); ?>
-                        </div>
+                    // Comment Form
+                    rtp_hook_comments();
+                }
 
-                        <?php rtp_hook_end_post();  ?>
-                    </div>
-                </div><!-- #post-0 --><?php
-            } ?>        
+            } ?>
 
         <?php rtp_hook_end_content(); ?>
-    </div><!-- End of #content -->
+    </section><!-- End of #content -->
 
-<?php get_sidebar(); ?>
+<?php rtp_hook_sidebar(); ?>
 
 <?php get_footer(); ?>
