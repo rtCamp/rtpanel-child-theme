@@ -38,6 +38,7 @@ add_action( 'init', 'rtp_remove_parent_hooks' );
 /*
  * List of other default rtpanel hooks that can be used
  */
+//add_filter( 'rtp_content_width', create_function( '', 'return 600;' ) ); // Required Filter incase changing the width of the #content
 //add_filter( 'rtp_nav_menu_depth', create_function( '', 'return 2;' ) );
 //add_filter( 'rtp_header_image_width', create_function( '', 'return 940;' ) );
 //add_filter( 'rtp_header_image_height', create_function( '', 'return 100;' ) );
