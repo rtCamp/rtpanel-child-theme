@@ -44,9 +44,9 @@ add_action( 'init', 'rtp_remove_parent_hooks' );
 //add_filter( 'rtp_header_image_height', create_function( '', 'return 100;' ) );
 //add_filter( 'rtp_default_image_path', create_function( '', 'return "' . RTP_CHILD_IMG . '/default.png";' ) );
 //add_filter( 'rtp_search_placeholder', create_function( '', 'return "' . __( 'Search', 'rtPanel' ) . '";' ) );
-//add_filter( 'rtp_name_placeholder', create_function( '', 'return "' . __( 'Name', 'rtPanel' ) . '";' ) );
+//add_filter( 'rtp_author_placeholder', create_function( '', 'return "' . __( 'Name', 'rtPanel' ) . '";' ) );
 //add_filter( 'rtp_email_placeholder', create_function( '', 'return "' . __( 'Email', 'rtPanel' ) . '";' ) );
-//add_filter( 'rtp_website_placeholder', create_function( '', 'return "' . __( 'Website', 'rtPanel' ) . '";' ) );
+//add_filter( 'rtp_url_placeholder', create_function( '', 'return "' . __( 'Website', 'rtPanel' ) . '";' ) );
 //add_filter( 'rtp_comment_placeholder', create_function( '', 'return "' . __( 'Type your comment here', 'rtPanel' ) . '";' ) );
 //add_filter( 'rtp_og_content', 'rtp_child_og_content' );
 //add_filter( 'rtp_viewport', create_function( '', 'return "width=1024";' ) );
@@ -59,9 +59,6 @@ add_action( 'init', 'rtp_remove_parent_hooks' );
   * @since rtPanelChild 1.0
   */
 function rtp_custom_scripts_and_styles() {
-    
-    /* Remove Google Open Sans Web Font */
-    //wp_dequeue_style( 'rtp-google-open-sans' );
     
     /* Include Scripts */
     //wp_enqueue_script( 'rtp-custom-script', RTP_CHILD_JS . '/rtp-custom-scripts.js', array( 'jquery' ), '', true );
