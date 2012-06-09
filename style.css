@@ -89,7 +89,9 @@ h6{font-size:12px;line-height:1.75em}
 
 /* Extra CSS for additonal elements, Plugins, fixes */
 
-/* IE Fixing */
+/* IE Browser Fixing */
+.ie .clearfix { zoom: 1; }
+.ie8 img { width: auto; }
 
 /* Responsive Structure */
 @media screen and (max-width: 960px) {
