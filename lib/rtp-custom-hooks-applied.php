@@ -20,7 +20,7 @@ function rtp_remove_parent_hooks() {
     
     //remove_action( 'rtp_hook_after_header','rtp_default_nav_menu' );
     //remove_action( 'rtp_hook_post_meta_top','rtp_default_post_meta' ); // Post Meta Top
-    //remove_action( 'rtp_hook_post_meta_top_comment', 'rtp_comment_count' ); // Post Meta Top Comment Count
+    //remove_action( 'rtp_hook_end_post_title', 'rtp_comment_count' ); // Post Meta Top Comment Count
     //remove_action( 'rtp_hook_post_meta_bottom','rtp_default_post_meta' ); // Post Meta Bottom
     //remove_action( 'rtp_hook_end_post_meta_top', 'rtp_edit_link' );
     //remove_action( 'rtp_hook_comments', 'rtp_default_comments' );
