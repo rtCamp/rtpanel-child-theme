@@ -15,10 +15,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 @import url("../rtpanel/style.css");
 
 /* Default Fonts */
-body { font: 0.875em/1.5em 'Open Sans', sans-serif; }
+body { font: 87.5%/1.5 sans-serif; }
 pre,code,kbd,samp,tt,var { font-family: monospace; }
-h1,h2,h3,h4,h5,h6 { font-family: 'PT Serif', serif; }
-.tagline,#reply-title small,.rtp-thoughts { font-family: 'Open Sans', sans-serif; }
+h1,h2,h3,h4,h5,h6 { font-family: serif; }
+.tagline,#reply-title small,.rtp-thoughts { font-family: sans-serif; }
 
 /* Default Colors */
 select, input, textarea { color: #111; }
