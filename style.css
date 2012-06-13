@@ -1,12 +1,12 @@
 /*
 Theme Name: rtPanel Child
 Template: rtpanel
-Theme URI: http://rtpanel.com
+Theme URI: http://rtcamp.com/rtpanel/
 Description: An Example rtPanel Child Theme with standard examples.
 Version: 2.0
 Author: rtCamp
-Author URI: http://rtcamp.com
-Tags: black, blue, gray, orange, white, light, two-columns, right-sidebar, fixed-width, custom-background, custom-header, custom-menu, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
+Author URI: http://rtcamp.com/
+Tags: black, blue, white, orange, light, one-column, two-columns, right-sidebar, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, flexible-width, full-width-template
 Contributors: rtCampers ( http://rtcamp.com/about/rtcampers/ )
 License: GNU General Public License, v2 (or newer)
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,40 +16,80 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 /* Default Fonts */
 body { font: 87.5%/1.5 sans-serif; }
-pre,code,kbd,samp,tt,var { font-family: monospace; }
-h1,h2,h3,h4,h5,h6 { font-family: serif; }
-.tagline,#reply-title small,.rtp-thoughts { font-family: sans-serif; }
+pre, code, kbd, samp, tt, var { font-family: monospace; }
+h1, h2, h3, h4, h5, h6 { font-family: serif; }
+.tagline, #reply-title small, .rtp-thoughts, input, select, textarea, #cse .gsc-control-cse, #cse .gsc-control-cse .gsc-table-result { font-family: sans-serif; }
 
 /* Default Colors */
 select, input, textarea { color: #111; }
 
-/* Placeholder */
-:-moz-placeholder { color: #666; }
-::-webkit-input-placeholder { color: #666; }
+/* Heading Style */
+h1 { margin: 1.125em 0 0.375em 0; font-size: 2em; font-weight: 400; line-height: 0.75em; }
+h2 { margin: 1.3125em 0 0.4375em 0; font-size: 1.7143em; font-weight: 400; line-height: 0.875em; }
+h3 { margin: 1.575em 0 0.525em 0; font-size: 1.4286em; font-weight: 400; line-height: 1.05em; }
+h4 { margin: 1.9688em 0 0.6563em 0; font-size: 1.1429em; line-height: 1.3125em; }
+h5 { margin: 2.25em 0 0.75em 0; font-size: 1em; line-height: 1.5em; }
+h6 { margin: 2.625em 0 0.875em 0; font-size: 0.8571em; line-height: 1.75em; }
 
-/* Webkit Validation Bubble */
-::-webkit-validation-bubble-message { padding: 5px; font-size: 12px; }
+/* Paragraph style */
+p { margin: 1.5em  0; }
+p:first-child,
+h1 + p, h1 + ol, h1 + ul, h2 + p, h2 + ol, h2 + ul, h3 + p, h3 + ol, h3 + ul,
+h4 + p, h4 + ol, h4 + ul, h5 + p, h5 + ol, h5 + ul, h6 + p, h6 + ol, h6 + ul { margin-top: 0; }
 
 /* Default Links */
-a, a:active, a:visited, .rtp-thoughts a, .rtp-thoughts a:active, .rtp-thoughts a:visited { color: #0279B5; text-decoration: none; }
-a:hover, .rtp-thoughts a:hover { color: #CD3517; text-decoration: underline; }
+a, a:active, a:visited,
+.rtp-thoughts a, .rtp-thoughts a:active, .rtp-thoughts a:visited,
+#cse .gsc-results .gsc-cursor-box .gsc-cursor-page { color: #0279B5; text-decoration: none; }
+a:hover, a:focus, .rtp-thoughts a:hover,
+#cse .gsc-results .gsc-cursor-box .gsc-cursor-page:hover { color: #CD3517; text-decoration: underline; }
 
 /* Heading Links */
 h1 a, h1 a:visited, h1 a:active, h2 a, h2 a:visited, h2 a:active { color: #111; text-decoration: none; }
-h1 a:hover, h2 a:hover { color: #CD3517; text-decoration: none; }
+h1 a:hover, h1 a:focus, h2 a:hover, h2 a:focus { color: #CD3517; text-decoration: none; }
 
 /* Generic Links */
 .rtp-common-link, .rtp-common-link:visited, .rtp-common-link:active, .rtp-common-link span, .rtp-common-link span:visited, .rtp-common-link span:active,
 .rtp-common-link a, .rtp-common-link a:visited, .rtp-common-link a:active { color: #666; }
 .rtp-common-link:hover, .rtp-common-link span:hover, .rtp-common-link a:hover { color: #111; }
 
-/* Heading Style */
-h1{font-size:28px;line-height:1.5em;font-weight:400}
-h2{font-size:24px;line-height:1.75em;font-weight:400}
-h3{font-size:20px;line-height:1.5em;font-weight:400}
-h4{font-size:16px;line-height:1.3125em}
-h5{font-size:14px;line-height:1.5em}
-h6{font-size:12px;line-height:1.75em}
+/*
+ * 960 Grid System
+ * Ref. http://960.gs/ and http://grids.heroku.com/
+ */
+.rtp-container-12 { max-width: 960px; }
+
+/* Grid >> Global */
+.rtp-grid-1, .rtp-grid-2, .rtp-grid-3, .rtp-grid-4, .rtp-grid-5, .rtp-grid-6,
+.rtp-grid-7, .rtp-grid-8, .rtp-grid-9, .rtp-grid-10, .rtp-grid-11, .rtp-grid-12 { margin-left: 10px; margin-right: 10px; }
+
+/* Grid >> 12 Columns */
+.rtp-grid-1 { width: 60px; }
+.rtp-grid-2 { width: 140px; }
+.rtp-grid-3 { width: 220px; }
+.rtp-grid-4 { width: 300px; }
+.rtp-grid-5 { width: 380px; }
+.rtp-grid-6 { width: 460px; }
+.rtp-grid-7 { width: 540px; }
+.rtp-grid-8 { width: 620px; }
+.rtp-grid-9 { width: 700px; }
+.rtp-grid-10 { width: 780px; }
+.rtp-grid-11 { width: 860px; }
+.rtp-grid-12 { width: 940px; }
+
+/* Border */
+#rtp-primary-menu, #rtp-nav-menu ul, pre, dt, .wp-caption, .avatar, .rtp-horizontal-border, .comments-container,
+#respond + .rtp-comments-header, .rtp-main-title, .comment-body + #respond, input[type=text], input[type=tel],
+input[type=color], input[type=search], input[type=number], input[type=url], input[type=email], input[type=password],
+input[type=button], input[type=submit], input[type=reset], textarea, select, button, input[type=date], input[type=datetime],
+input[type=datetime-local], input[type=month], input[type=tel], input[type=time], input[type=week], .page-link > a,
+.page-link > span, .breadcrumb, .comment-body, hr, blockquote, table, caption, th, td, code, #rtp-nav-menu ul a,
+.rtp-image-box .wp-caption + p, #respond form, #footer a, .rtp-thumbnail-shadow img, .gallery-icon .attachment-thumbnail,
+.rtp-sibling-attachments img, .sticky, .rtp-comment-count, #cse input.gsc-input,
+#cse .gsc-results .gsc-cursor-box .gsc-cursor-page, .bbp-pagination-links > a, .bbp-pagination-links > span,
+.wp-pagenavi a, .wp-pagenavi span, #respond .form-allowed-tags,
+.widget_calendar table, .widget_calendar td { border: 1px solid #DDD; }
+#footerbar + .rtp-horizontal-border { border-top: 3px double #DDD; }
 
 /* Layout */
 
@@ -92,6 +132,7 @@ h6{font-size:12px;line-height:1.75em}
 /* IE Browser Fixing */
 .ie .clearfix { zoom: 1; }
 .ie8 img { width: auto; }
+.ie7 .rtp-thumbnail-shadow a.aligncenter,.ie7 .rtp-no-thumbnail-shadow a.aligncenter,.ie7 .gallery-item,.ie7 .wp-pagenavi a,.ie7 .wp-pagenavi span,.ie7 .page-link > a,.ie7 .page-link > span,.ie7 .bbp-pagination-links > a,.ie7 .bbp-pagination-links > span,.ie7 #cse .gsc-results .gsc-cursor-box .gsc-cursor-page { *display: inline; }
 
 /* Responsive Structure */
 @media screen and (max-width: 960px) {
