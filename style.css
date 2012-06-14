@@ -77,20 +77,6 @@ h1 a:hover, h1 a:focus, h2 a:hover, h2 a:focus { color: #CD3517; text-decoration
 .rtp-grid-11 { width: 860px; }
 .rtp-grid-12 { width: 940px; }
 
-/* Border */
-#rtp-primary-menu, #rtp-nav-menu ul, pre, dt, .wp-caption, .avatar, .rtp-horizontal-border, .comments-container,
-#respond + .rtp-comments-header, .rtp-main-title, .comment-body + #respond, input[type=text], input[type=tel],
-input[type=color], input[type=search], input[type=number], input[type=url], input[type=email], input[type=password],
-input[type=button], input[type=submit], input[type=reset], textarea, select, button, input[type=date], input[type=datetime],
-input[type=datetime-local], input[type=month], input[type=tel], input[type=time], input[type=week], .page-link > a,
-.page-link > span, .breadcrumb, .comment-body, hr, blockquote, table, caption, th, td, code, #rtp-nav-menu ul a,
-.rtp-image-box .wp-caption + p, #respond form, #footer a, .rtp-thumbnail-shadow img, .gallery-icon .attachment-thumbnail,
-.rtp-sibling-attachments img, .sticky, .rtp-comment-count, #cse input.gsc-input,
-#cse .gsc-results .gsc-cursor-box .gsc-cursor-page, .bbp-pagination-links > a, .bbp-pagination-links > span,
-.wp-pagenavi a, .wp-pagenavi span, #respond .form-allowed-tags,
-.widget_calendar table, .widget_calendar td { border: 1px solid #DDD; }
-#footerbar + .rtp-horizontal-border { border-top: 3px double #DDD; }
-
 /* Layout */
 
 
