@@ -141,16 +141,9 @@ function rtp_child_theme_options_help() {
 		'<p>' . __( '<a href="http://rtcamp.com/support/forum/rtpanel/" target="_blank" title="rtPanel Forum">rtPanel Forum</a>', 'rtPanel' ) . '</p>';
 
     $screen = get_current_screen();
-    if ( method_exists( $screen, 'add_help_tab' ) ) {
-        // WordPress 3.3
-        $screen->add_help_tab( array( 'title' => __( 'Google Analytics', 'rtPanel' ), 'id' => 'rtp_google_analytics_help', 'content' => $rtp_google_analytics_help ) );
-        $screen->add_help_tab( array( 'title' => __( 'Theme Options', 'rtPanel' ), 'id' => 'rtp-theme-options-help', 'content' => $rtp_theme_option_help ) );
-        $screen->set_help_sidebar( $sidebar );
-    } else {
-        // WordPress 3.2
-        add_contextual_help( $screen, $rtp_google_analytics_help . $sidebar );
-        add_contextual_help( $screen, $rtp_theme_option_help . $sidebar );
-    }
+    $screen->add_help_tab( array( 'title' => __( 'Google Analytics', 'rtPanel' ), 'id' => 'rtp_google_analytics_help', 'content' => $rtp_google_analytics_help ) );
+    $screen->add_help_tab( array( 'title' => __( 'Theme Options', 'rtPanel' ), 'id' => 'rtp-theme-options-help', 'content' => $rtp_theme_option_help ) );
+    $screen->set_help_sidebar( $sidebar );
 }
 add_action( 'load-appearance_page_theme_options', 'rtp_child_theme_options_help' );
 
