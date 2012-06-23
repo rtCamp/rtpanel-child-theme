@@ -63,6 +63,10 @@ h1 a:hover, h1 a:focus, h2 a:hover, h2 a:focus { color: #CD3517; text-decoration
 .rtp-grid-1, .rtp-grid-2, .rtp-grid-3, .rtp-grid-4, .rtp-grid-5, .rtp-grid-6,
 .rtp-grid-7, .rtp-grid-8, .rtp-grid-9, .rtp-grid-10, .rtp-grid-11, .rtp-grid-12 { margin-left: 10px; margin-right: 10px; }
 
+/* Grid >> Children (Alpha ~ First, Omega ~ Last) */
+.rtp-alpha { margin-left: 0; }
+.rtp-omega { margin-right: 0; }
+
 /* Grid >> 12 Columns */
 .rtp-grid-1 { width: 60px; }
 .rtp-grid-2 { width: 140px; }
