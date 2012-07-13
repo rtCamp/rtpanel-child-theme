@@ -55,11 +55,7 @@ function rtp_post_types_save_postdata( $post_id ) {
   if ( !wp_verify_nonce( @$_POST[$_POST['post_type'] . '_noncename'], plugin_basename( __FILE__ ) ) )
       return;
   
-  // Check permissions
-  if ( !current_user_can( 'edit_post', $post_id ) )
-     return;
-
-  // OK, we're authenticated: we need to find and save the data
+  // OK,nonce has been verified and now we can save the data according the the capabilities of the user
   if( 'page' == $_POST['post_type'] ) {
       if ( !current_user_can( 'edit_page', $post_id ) ) {
           return;
