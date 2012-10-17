@@ -12,8 +12,8 @@
  */
 function rtp_remove_parent_hooks() {
     //remove_action( 'rtp_hook_after_logo', 'rtp_blog_description' ); // Remove Tagline
-    //remove_custom_background(); // Remove Bckground Option from Admin Menu
-    //remove_custom_image_header(); // Remove Header Option from Admin Menu
+    //remove_theme_support( 'custom-background' ); // Remove Bckground Option from Admin Menu
+    //remove_theme_support( 'custom-header' ); // Remove Header Option from Admin Menu
     
     //remove_action( 'rtp_hook_single_pagination', 'rtp_default_single_pagination' );
     //remove_action( 'rtp_hook_archive_pagination', 'rtp_default_archive_pagination' );
