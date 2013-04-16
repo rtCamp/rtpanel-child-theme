@@ -50,23 +50,25 @@ add_action( 'init', 'rtp_remove_parent_hooks' );
 //add_filter( 'rtp_comment_placeholder', create_function( '', 'return "' . __( 'Type your comment here', 'rtPanel' ) . '";' ) );
 //add_filter( 'rtp_og_content', 'rtp_child_og_content' );
 //add_filter( 'rtp_viewport', create_function( '', 'return "width=1024";' ) );
+//add_filter( 'rtp_mobile_nav_support', create_function( '', 'return "";' ) );
 
  /**
   * Add any custom scripts/styles using this function.
   * The 'wp_enqueue_scripts' hooks should be used to add both styles and scripts.
   * For more info visit :- http://wpdevel.wordpress.com/2011/12/12/use-wp_enqueue_scripts-not-wp_print_styles-to-enqueue-scripts-and-styles-for-the-frontend/
   * 
+  * Cycle2 Demos: http://jquery.malsup.com/cycle2/demo/
+  * 
   * @since rtPanelChild 1.0
   */
 function rtp_custom_scripts_and_styles() {
-    
-    /* Include Scripts */
+
+    /* Uncomment the following lines if using the jQuery Cycle2 Plugin for the slider. */
+    //wp_enqueue_script( 'jquery-cycle', RTP_CHILD_JS . '/jquery.cycle2.min.js', array( 'jquery' ), '', true );
+
+    /* Include Custom Script */
     //wp_enqueue_script( 'rtp-custom-script', RTP_CHILD_JS . '/rtp-custom-scripts.js', array( 'jquery' ), '', true );
-    
-    /* Uncomment the following lines if using the jQuery Cycle Plugin for the slider */
-    //wp_enqueue_script( 'jquery-cycle', RTP_CHILD_JS . '/jquery.cycle.js', array( 'jquery' ), '', true );
-    //wp_enqueue_script( 'rtp-cycle-slideshow', RTP_CHILD_JS . '/rtp-cycle-slideshow.js', array( 'jquery', 'jquery-cycle' ), '', true );
-    
+
     /* Include styles */
     //wp_enqueue_style( 'rtp-custom-style', RTP_CHILD_CSS . '/custom-style.css' );
 }
