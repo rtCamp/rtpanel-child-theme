@@ -33,8 +33,6 @@ get_header(); ?>
 
                         </header><!-- .post-title -->
                         
-                        <?php echo rtp_get_cycle_slider(); ?>
-                        
                         <div class="post-content clearfix">
                             <?php rtp_hook_begin_post_content(); ?>
 
