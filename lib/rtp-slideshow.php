@@ -46,13 +46,11 @@ function rtp_get_cycle_slider( $category_name = '', $slide_number = 10, $content
     $slider_pagination = false;
     $slider_html = '<div id="rtp-cycle-slider">';
     if ( $slider_q->have_posts() ) {
-        $slider_html .= '<div class="rtp-cycle-slider-container">';
+        $slider_html .= '<div class="cycle-slideshow rtp-cycle-slider-container" data-cycle-slides="div" data-cycle-pager="#rtp-pager" data-cycle-log="false" data-cycle-timeout="1000" data-cycle-prev="#rtp-prev-cycle" data-cycle-next="#rtp-next-cycle">';
         while ( $slider_q->have_posts() ) { $slider_q->the_post();
             if ( has_post_thumbnail() ) {
                 $image_details = wp_get_attachment_image_src( get_post_thumbnail_id(), 'rtp-slider' );
                 $slider_image = $image_details[0];
-            } else {
-                $slider_image = rtp_generate_thumbs( '', 'rtp-slider' );
             }
             
             if ( $slider_image ) {
@@ -71,7 +69,7 @@ function rtp_get_cycle_slider( $category_name = '', $slide_number = 10, $content
 
     /* Uncomment following line if using pagination in the slider */
     if ( $slider_pagination && ( $show_navigation || $show_pagination ) ) {
-        $slider_html .= '<div class="rtp-cycle-pagination">';
+        $slider_html .= '<div class="rtp-cycle-pagination" id="rtp-pager">';
             $slider_html .= ( $show_navigation ) ? '<a href="#" id="rtp-prev-cycle" class="previous-cycle"><span>'. __( 'Prev', 'rtPanel' ) . '</span></a><a href="#" id="rtp-next-cycle" class="next-cycle"><span>'. __( 'Next', 'rtPanel' ) . '</span></a>' : '';
             $slider_html .= ( $show_pagination ) ? '<div id="rtp-cycle-nav" class="rtp-pagination"></div>' : '';
         $slider_html .= '</div>';

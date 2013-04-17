@@ -182,21 +182,33 @@ function rtp_theme_options_metabox() {
                     <input type="text" value="<?php echo esc_attr( $rtp_theme_options['custom_text'] ); ?>" size="40" name="theme_options[custom_text]" id="custom_text" />
                 </td>
             </tr>
+
             <tr valign="top">
                 <th scope="row"><label for="custom_textarea"><?php _e( 'Custom Textarea', 'rtPanel' ); ?></label></th>
                 <td>
                     <textarea cols="50" rows="5" name="theme_options[custom_textarea]" id="custom_textarea"><?php echo esc_textarea( $rtp_theme_options['custom_textarea'] ); ?></textarea><br />
                 </td>
             </tr>
+
             <tr valign="top">
-                <th scope="row"><label for="custom_image_uploader"><?php _e( 'Custom Image Uploader', 'rtPanel' ); ?></label></th>
+                <th scope="row">
+                    <?php
+                        $custom_image_var = 'custom_image_id';
+                        $custom_image_id = $rtp_theme_options[$custom_image_var];
+                    ?>
+                    <label for="rtp_<?php echo $custom_image_var; ?>"><?php _e( 'Custom Image Uploader', 'rtPanel' ); ?></label>
+                </th>
+
                 <td>
-                    <input type="button" value="<?php _e( 'Upload Custom Image', 'rtPanel' ); ?>" class="button " id="custom_image_uploader" />
-                    <input type="hidden"  name="theme_options[custom_image_id]" id="custom_image_id" value="<?php if( isset( $rtp_theme_options['custom_image_id'] ) ) echo $rtp_theme_options['custom_image_id']; ?>" />
+                    <input type="button" value="<?php _e( 'Upload Custom Image', 'rtPanel' ); ?>" data-id="<?php echo $custom_image_var; ?>" class="button rtp-media-uploader" id="rtp_<?php echo $custom_image_var; ?>" />
+                    <small class="file-added hide" style="background-color: #FFFFE0; border: 1px solid #e6db55; font-weight: bold; padding: 5px 8px;"><?php _e('File Added', 'rtPanel') ?></small>
+                    <input type="hidden" name="theme_options[<?php echo $custom_image_var; ?>]" id="<?php echo $custom_image_var; ?>" value="<?php if( isset( $custom_image_id ) ) echo $custom_image_id; ?>" />
                 </td>
+
                 <td>
-                    <?php $custom_image_uploader = wp_get_attachment_image_src( @$rtp_theme_options['custom_image_id'], 'thumbnail' ); ?>
-                    <img src="<?php echo @$custom_image_uploader[0] ?>" alt="Custom Image"<?php echo ( isset( $custom_image_uploader[0] ) ?  'style="max-width: 240px; width: 100%;"' : 'style="max-width: 240px; width: 100%; display: none;"' ); ?> />
+                    <?php 
+                    $custom_image_uploader = wp_get_attachment_image_src( @$custom_image_id, 'thumbnail' ); ?>
+                    <img src="<?php echo @$custom_image_uploader[0] ?>" alt="Custom Image"<?php echo ( isset( $custom_image_uploader[0] ) ?  'style="max-height: 100px; height: auto; max-width: 100px; width: auto;"' : 'style="display: none; max-height: 100px; height: auto; max-width: 100px; width: auto;"' ); ?> />
                 </td>
             </tr>
         </tbody>
@@ -211,6 +223,7 @@ function rtp_theme_options_metabox() {
 function rtp_theme_options_validate( $input ) {
     if ( isset ( $_POST['rtp_submit'] ) ) {
        $input['custom_text'] = trim( $input['custom_text'] );
+       $input['custom_image_id '] = trim( $input['custom_image_id '] );
     } elseif ( isset ( $_POST['rtp_reset'] ) ) {
        $input = rtp_theme_default_values();
        add_settings_error( 'theme_options', 'reset_theme_options', __( 'All Theme Options have been restored to default.', 'rtPanel' ), 'updated' );
@@ -225,6 +238,11 @@ function rtp_theme_options_validate( $input ) {
  * @since rtPanelChild 1.0
  */
 function rtp_theme_options_page_scripts() {
+    // WP Enqueue Media
+    if( function_exists( 'wp_enqueue_media' ) ) {
+        wp_enqueue_media();
+    }
+    
     wp_enqueue_script( 'rtp-theme-options', get_stylesheet_directory_uri() . '/js/rtp-theme-options.js', 'rtp-admin-scripts' );
 }
 add_action( 'admin_print_scripts-appearance_page_theme_options', 'rtp_theme_options_page_scripts', 999 );

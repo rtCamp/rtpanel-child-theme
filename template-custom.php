@@ -32,7 +32,9 @@ get_header(); ?>
                             <?php rtp_hook_post_meta( 'top' ); ?>
 
                         </header><!-- .post-title -->
-
+                        
+                        <?php echo rtp_get_cycle_slider(); ?>
+                        
                         <div class="post-content clearfix">
                             <?php rtp_hook_begin_post_content(); ?>
 
