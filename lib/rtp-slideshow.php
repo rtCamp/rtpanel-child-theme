@@ -7,12 +7,6 @@
  * jQuery Cycle Plugin ( http://jquery.malsup.com/cycle/ )
  */
 
-/* Uncomment following line if using a custom image size for the slider */
-/*
-if ( function_exists( 'add_image_size' ) ) {
-    add_image_size( 'rtp-slider', 600, 300, true );
-}
-*/
 /**
  * Usage:
  * Copy-Paste the following lines to use slider,
