@@ -1,0 +1,145 @@
+$image-space: rem-calc(20);
+
+// ***** Images ***** //
+@mixin rtp-image() {
+    /* Images */
+    img {
+        // Floated Images
+        &.none,
+        &.alignnone { margin-left: 0; margin-right: $image-space; }
+        //&.aligncenter { margin-left: auto; margin-right: auto; }
+        &.left,
+        &.alignleft { margin-left: 0; margin-right: $image-space; }
+        &.right,
+        &.alignright { margin-left: $image-space; margin-right: 0; }
+
+        // IE8 image width issue fix.
+        .ie8 & { width: auto; }
+    }
+}
+
+
+// ***** Thumbnail Container ***** //
+@mixin rtp-thumbnail() {
+    .rtp-thumbnail-container {
+        img { margin: 0; }
+
+        // Image Container Link
+        a { margin-top: 5px; margin-bottom: 5px;
+            // Floated Images
+            &.none,
+            &.alignnone { display: inline-block; margin-bottom: 14px; margin-left: 0; margin-right: $image-space; }
+            &.left,
+            &.alignleft { margin-left: 0; margin-right: $image-space; }
+            &.center,
+            &.aligncenter { display: inline-block; margin-bottom: 14px; }
+            &.right,
+            &.alignright { margin-left: $image-space; margin-right: 0; }
+        }
+    }
+}
+
+
+// ***** Thumbnail with shadow effect ***** //
+@mixin rtp-thumbnail-shadow() {
+    /* Thumbnail with shadow effect */
+    .rtp-thumbnail-shadow {
+        img {
+            background: $base-background;
+            @include rtp-border();
+            @include box-shadow(0 0 4px darken($base-background, 20%));
+            padding: 4px;
+        }
+    }
+}
+
+
+// ***** Image Caption Style ***** //
+@mixin rtp-wp-caption() {
+    /* Image Caption Style */
+    .wp-caption { background-color: darken($base-background, 4%); margin: 6px 5px 15px; max-width: 100%; overflow: hidden; padding: 5px 5px 0; text-align: center; // Self
+        // Floated Elements
+        &.alignnone, &.alignleft { margin-left: 0; margin-right: 15px; }
+        &.aligncenter { margin-left: auto; margin-right: auto; }
+        &.alignright { margin-left: 15px; margin-right: 0; }
+
+        a { border: 0; text-decoration: none; }
+        img { margin: 0; }
+    }
+
+    .wp-caption-text { color: $gray; line-height: 1.286em; margin: 0 5px 8px; }
+    .rtp-image-box .wp-caption + p { margin: 20px 0 10px; }
+}
+
+
+// ***** WP Gallery ***** //
+@mixin rtp-gallery() {
+    /* Gallery */
+    .gallery {
+        &[data-clearing] li { margin-right: 0; }
+    }
+
+    // Caption
+    .gallery-caption { color: $gray; margin: 0 0 10px; padding: 0; text-align: center; }
+
+    /* End - Gallery */
+}
+
+
+// ****** Attachment Style ****** //
+@mixin rtp-attachment-page() {
+    /* Attachment Style */
+    .attachment .attachment-full { margin: 0; }
+    .post-content .attachment img { margin: 0 auto; }
+
+    // Attachment Page Images
+    .rtp-sibling-attachments { padding: 0; margin: 0 0 1em; // Self
+        // List
+        li { line-height: 1em; list-style: none; margin-top: 10px; margin-bottom: 10px; text-align: center; }
+        // Images
+        img {
+            background-color: darken($base-background, 4%); @include rtp-border(); margin: 0; padding: 5px;
+            &:hover { border-color: darken($border-color, 30%); }
+        }
+    }
+}
+
+
+// ****** Paged Navigation ****** //
+@mixin rtp-paged-navigation() {
+    /* Paged Navigation */
+    .rtp-navigation, .rtp-comments-pagination { clear: both; padding-bottom: rem-calc(20); padding-top: rem-calc(20); // Self
+        // Links
+        a { text-decoration: none;
+            // Hover
+            &:hover { text-decoration: underline; }
+        }
+    }
+
+    .rtp-navigation {
+        .alignleft { text-align: left; }
+        .alignright { text-align: right; }
+    }
+
+    // Single Page Navigation
+    .single {
+        .rtp-navigation,
+        .rtp-comments-pagination {
+            //padding-bottom: 0;
+            //padding-top: 1.5em;
+        }
+    }
+
+    // Attachment Page
+    .single-attachment, .rtp-image-attachment {
+        .rtp-navigation { margin: 10px 0 0; padding-bottom: 0; }
+    }
+}
+
+// ****** Search ****** //
+@mixin rtp-search() {
+    // Search
+    .rtp-search-form-wrapper {
+        .rtp-search-input { float: left; height: 36px; width: 75%; }
+    }
+}

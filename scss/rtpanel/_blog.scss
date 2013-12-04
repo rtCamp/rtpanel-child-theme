@@ -1,0 +1,63 @@
+/* Post Loop */
+// ***** Post Container ***** //
+.hentry { border-bottom: 1px dotted $border-color; padding-bottom: rem-calc(30); padding-top: rem-calc(26); position: relative; // Removed clear: both;
+    
+    &:first-child { padding-top: 0; }
+
+    // ***** Sticky Post ***** //
+    &.sticky { @include rtp-panel; }
+}
+
+.rtp-singular,
+.attachment,
+.rtp-full-width {
+    .hentry { padding-bottom: rem-calc(5); } // border-bottom: 0; padding-bottom: 0;
+}
+
+// Read More
+.rtp-readmore { font-size: rem-calc(14); } // font-size: rem-calc(13);
+
+// ***** Post Header ***** //
+.post-header { margin-bottom: rem-calc(26); }
+.post-title { float: left; line-height: 1.2; margin: 0 0 em-calc(8); }
+.rtp-main-title { border-bottom: 1px solid $border-color; color: $title-link-color; float: none; margin-top: 0.480em; padding-bottom: 0.2em; }
+
+// ***** Post Content ***** //
+.post-content {  } // @extend .clearfix;
+
+// Not Found Page
+.rtp-not-found { margin: 1.5em 0; }
+
+/* Post Meta */
+.post-meta { clear: both; color: $gray-light; font-size: rem-calc(13);
+    a {
+        & { color: $gray-light; text-decoration: none; }
+        &:hover, &:focus { color: $link-hover-color; }
+    }
+}
+
+.post-meta-bottom { padding: 1em 0 0;
+    .single & { margin: 1.5em 0 0; padding: 0; }
+}
+
+.rtp-post-comment-count { margin: 0.7em 0 0; text-align: right; }
+
+// Edit Link
+.rtp-edit-link {
+    a {  }
+}
+
+/* Curly Brackets Style */
+// .rtp-curly-bracket { color: darken($base-background, 14%); font-size: 1.428em; font-weight: normal; }
+
+/* Post Comment */
+.rtp-post-comment {
+    &,
+    &:visited {  }
+
+    // Span
+    span { }
+}
+
+.post-tags { clear: left; }
+/* End - Post Meta */

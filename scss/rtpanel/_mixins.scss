@@ -1,0 +1,34 @@
+// ********* rtPanel Mixins *********
+
+@mixin rtp-link ( $link-color: $link-color, $hover-color: $link-hover-color ) {
+    & { color: $link-color; }
+    &:hover, &:focus { color: $link-hover-color; }
+}
+
+// Border 1px
+@mixin rtp-border($width: 1px, $style: solid, $color: $border-color) {
+    border: $width $style $color;
+}
+
+// ********* rtPanel Constant Mixins ********* //
+
+// Set margin and padding 0
+@mixin rtp-margin-padding-0() {
+    margin: 0;
+    padding: 0;
+}
+
+// Text Indent
+@mixin rtp-text-indent() {
+    text-indent: -9999px;
+    text-transform: uppercase; // IE hack
+}
+
+// Panel
+@mixin rtp-panel() {
+    border-style: $panel-border-style;
+    border-width: $panel-border-size;
+    border-color: darken($panel-bg, $panel-function-factor);
+    padding: $panel-padding;
+    background: $panel-bg;
+}
