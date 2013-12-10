@@ -51,6 +51,7 @@ add_action( 'init', 'rtp_remove_parent_hooks' );
 //add_filter( 'rtp_og_content', 'rtp_child_og_content' );
 //add_filter( 'rtp_viewport', create_function( '', 'return "width=1024";' ) );
 //add_filter( 'rtp_mobile_nav_support', create_function( '', 'return "";' ) );
+//add_filter( 'rtp_gravatar_size', create_function( '', 'return 64;' ) );
 
  /**
   * Add any custom scripts/styles using this function.
