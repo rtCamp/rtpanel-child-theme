@@ -110,3 +110,11 @@ function rtp_google_analytics() {
     }
 }
 add_action( 'wp_head', 'rtp_google_analytics', 99 );
+
+function rtp_call_slider () {
+    if ( is_front_page () ) {
+        $slider_q = new WP_Query ( array( 'posts_per_page' => 10, 'order' => 'DESC' ) );
+        rtp_orbit_slider ( $slider_q );
+    }
+}
+//add_action ( "rtp_hook_begin_content_wrapper", "rtp_call_slider", 1, 0 );
