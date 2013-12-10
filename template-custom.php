@@ -10,7 +10,7 @@
  */
 get_header(); ?>
 
-    <section id="content" role="main" class="large-8 rtp-custom-page">
+    <section id="content" role="main" class="large-8 columns rtp-custom-page">
         <?php rtp_hook_begin_content(); ?>
         
         <?php
