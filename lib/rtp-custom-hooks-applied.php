@@ -118,4 +118,4 @@ function rtp_call_slider () {
         rtp_orbit_slider ( $slider_q );
     }
 }
-//add_action ( "rtp_hook_begin_content_wrapper", "rtp_call_slider", 1, 0 );
+add_action ( "rtp_hook_begin_content_wrapper", "rtp_call_slider", 1, 0 );
