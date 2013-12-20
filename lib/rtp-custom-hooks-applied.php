@@ -18,7 +18,7 @@ function rtp_remove_parent_hooks() {
     //remove_action( 'rtp_hook_single_pagination', 'rtp_default_single_pagination' );
     //remove_action( 'rtp_hook_archive_pagination', 'rtp_default_archive_pagination' );
     
-    //remove_action( 'rtp_hook_after_header','rtp_default_nav_menu' );
+    //remove_action( 'rtp_hook_begin_header','rtp_default_nav_menu' );
     //remove_action( 'rtp_hook_post_meta_top','rtp_default_post_meta' ); // Post Meta Top
     //remove_action( 'rtp_hook_end_post_title', 'rtp_default_comment_count' ); // Post Meta Top Comment Count
     //remove_action( 'rtp_hook_post_meta_bottom','rtp_default_post_meta' ); // Post Meta Bottom
