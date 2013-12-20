@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
-        
+
         // Watch for hanges and trigger compass, jshint, uglify and livereload
         // Ref. https://npmjs.org/package/grunt-contrib-watch
         watch: {
@@ -20,7 +20,7 @@ module.exports = function(grunt) {
                 files: ['style.css', 'js/*.js', '*.html', '*.php', 'img/**/*.{png,jpg,jpeg,gif,webp,svg}']
             }
         },
-        
+
         // SCSS and Compass
         // Ref. https://npmjs.org/package/grunt-contrib-compass
         compass: {
@@ -45,23 +45,22 @@ module.exports = function(grunt) {
                 }
             }
         },
-        
+
         // Image Optimization
-        // Note : This needs to improve
+        // Note: This is one time running task, so run grunt after adding images in img/ folder
         // Ref. https://npmjs.org/package/grunt-contrib-imagemin
         imagemin: {
-            dist: {
+            dynamic: {
                 options: {
                     optimizationLevel: 7,
                     progressive: true
                 },
-
-                files: {
+                files: [{
                     expand: true,
                     cwd: 'img/',
-                    src: ['**/*'],
-                    dest: 'img/test/'
-                }
+                    src: ['**/*.{png,jpg,gif}'],
+                    dest: 'img/'
+                }]
             }
         },
 
@@ -112,7 +111,7 @@ module.exports = function(grunt) {
     // grunt.renameTask('rsync', 'deploy');
 
     // register task
-    // grunt.registerTask('imagemin', ['imagemin']);
+//     grunt.registerTask('imagemin', ['imagemin']);
 
     // Fontello Fonts
     // grunt.registerTask('iconFonts', ['fontello']);
@@ -121,5 +120,5 @@ module.exports = function(grunt) {
     //grunt.registerTask('default', ['wordpressdeploy']);
 
     // register task
-    grunt.registerTask('default', ['fontello', 'watch']);
+    grunt.registerTask('default', ['fontello', 'imagemin', 'watch']);
 };
