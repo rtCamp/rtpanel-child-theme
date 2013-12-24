@@ -54,7 +54,7 @@ add_action( 'init', 'rtp_remove_parent_hooks' );
 //add_filter( 'rtp_viewport', create_function( '', 'return "width=1024";' ) );
 //add_filter( 'rtp_mobile_nav_support', create_function( '', 'return "";' ) );
 //add_filter( 'rtp_gravatar_size', create_function( '', 'return 64;' ) );
-//add_filter( 'rtp_set_full_width_grid_class', create_function( '', 'return "large-12 columns rtp-full-width-content;' ) );
+//add_filter( 'rtp_set_full_width_grid_class', create_function( '', 'return "large-12 columns rtp-full-width-grid";' ) );
 //add_filter( 'rtp_set_content_grid_class', create_function( '', 'return "large-8 columns";' ) );
 //add_filter( 'rtp_set_sidebar_grid_class', create_function( '', 'return "large-4 columns";' ) );
 //add_filter( 'rtp_set_footer_widget_grid_class', create_function( '', 'return "large-3 small-6 columns";' ) );
