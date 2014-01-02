@@ -27,6 +27,7 @@ function rtp_remove_parent_hooks() {
     //remove_action( 'rtp_hook_begin_post_meta_top', 'rtp_edit_link' );
     //remove_action( 'rtp_hook_comments', 'rtp_default_comments' );
     //remove_action( 'rtp_hook_begin_content', 'rtp_breadcrumb_support' ); // Remove breadcrumb
+    //remove_action( 'rtp_hook_after_content_wrapper', 'rtp_footer_separator_border' ); // Remove Footer Separator
     
     //remove_filter( 'rtp_readmore', 'rtp_readmore_braces' );
     //remove_filter( 'the_excerpt', 'rtp_no_ellipsis' );
