@@ -15,15 +15,19 @@ function rtp_remove_parent_hooks() {
     //remove_theme_support( 'custom-background' ); // Remove Bckground Option from Admin Menu
     //remove_theme_support( 'custom-header' ); // Remove Header Option from Admin Menu
     
+    //remove_action( 'rtp_hook_end_header', 'rtp_header_separator_border' );
+    
     //remove_action( 'rtp_hook_single_pagination', 'rtp_default_single_pagination' );
     //remove_action( 'rtp_hook_archive_pagination', 'rtp_default_archive_pagination' );
     
-    //remove_action( 'rtp_hook_after_header','rtp_default_nav_menu' );
+    //remove_action( 'rtp_hook_begin_header','rtp_default_nav_menu' );
     //remove_action( 'rtp_hook_post_meta_top','rtp_default_post_meta' ); // Post Meta Top
     //remove_action( 'rtp_hook_end_post_title', 'rtp_default_comment_count' ); // Post Meta Top Comment Count
     //remove_action( 'rtp_hook_post_meta_bottom','rtp_default_post_meta' ); // Post Meta Bottom
     //remove_action( 'rtp_hook_begin_post_meta_top', 'rtp_edit_link' );
     //remove_action( 'rtp_hook_comments', 'rtp_default_comments' );
+    //remove_action( 'rtp_hook_begin_content', 'rtp_breadcrumb_support' ); // Remove breadcrumb
+    //remove_action( 'rtp_hook_after_content_wrapper', 'rtp_footer_separator_border' ); // Remove Footer Separator
     
     //remove_filter( 'rtp_readmore', 'rtp_readmore_braces' );
     //remove_filter( 'the_excerpt', 'rtp_no_ellipsis' );
@@ -51,6 +55,11 @@ add_action( 'init', 'rtp_remove_parent_hooks' );
 //add_filter( 'rtp_og_content', 'rtp_child_og_content' );
 //add_filter( 'rtp_viewport', create_function( '', 'return "width=1024";' ) );
 //add_filter( 'rtp_mobile_nav_support', create_function( '', 'return "";' ) );
+//add_filter( 'rtp_gravatar_size', create_function( '', 'return 64;' ) );
+//add_filter( 'rtp_set_full_width_grid_class', create_function( '', 'return "large-12 columns rtp-full-width-grid";' ) );
+//add_filter( 'rtp_set_content_grid_class', create_function( '', 'return "large-8 columns";' ) );
+//add_filter( 'rtp_set_sidebar_grid_class', create_function( '', 'return "large-4 columns";' ) );
+//add_filter( 'rtp_set_footer_widget_grid_class', create_function( '', 'return "large-3 small-6 columns";' ) );
 
  /**
   * Add any custom scripts/styles using this function.
@@ -62,7 +71,6 @@ add_action( 'init', 'rtp_remove_parent_hooks' );
   * @since rtPanelChild 1.0
   */
 function rtp_custom_scripts_and_styles() {
-
     /* Uncomment the following lines if using the jQuery Cycle2 Plugin for the slider. */
     //wp_enqueue_script( 'jquery-cycle', RTP_CHILD_JS . '/jquery.cycle2.min.js', array( 'jquery' ), '', true );
 
@@ -110,3 +118,11 @@ function rtp_google_analytics() {
     }
 }
 add_action( 'wp_head', 'rtp_google_analytics', 99 );
+
+function rtp_call_slider () {
+    if ( is_front_page () ) {
+        $slider_q = new WP_Query ( array( 'posts_per_page' => 10, 'order' => 'DESC' ) );
+        rtp_orbit_slider ( $slider_q );
+    }
+}
+//add_action ( "rtp_hook_begin_content_wrapper", "rtp_call_slider", 1, 0 );

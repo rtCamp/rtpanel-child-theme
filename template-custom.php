@@ -59,4 +59,4 @@ get_header(); ?>
 
 <?php rtp_hook_sidebar(); ?>
 
-<?php get_footer(); ?>
+<?php get_footer();

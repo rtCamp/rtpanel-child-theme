@@ -1,12 +1,22 @@
+# Require any additional compass plugins here.
+add_import_path "assets/foundation/bower_components/foundation/scss"
+
 # Set this to the root of your project when deployed:
 http_path = "/"
-css_dir = ".."
-sass_dir = ".."
+css_dir = "/"
+sass_dir = "assets/rtpanel"
 images_dir = "img"
 javascripts_dir = "js"
 
-output_style = :compact
-environment = :production
+output_style = :compressed
+
+relative_assets = true
+
+line_comments = false
+color_output = false
+
+#environment = :production
+
 #Symbol	The environment mode. Defaults to :production, can also be :development
 
 # You can select your preferred output style here (can be overridden via the command line):

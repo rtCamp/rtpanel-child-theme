@@ -40,7 +40,7 @@ function rtp_create_post_types() {
         'rewrite' => true,
         'has_archive' => true, 
         'query_var' => true,
-        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+        'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
         'register_meta_box_cb' => null,
         'taxonomies' => array(), 
         'show_ui' => null, 
