@@ -9,8 +9,7 @@
 get_header();
 
 $content_width = $max_content_width;
-$rtp_content_grid_class = apply_filters('rtp_set_full_width_grid_class', 'large-12 columns rtp-full-width-content');
-?>
+$rtp_content_grid_class = apply_filters( 'rtp_set_full_width_grid_class', 'large-12 columns rtp-full-width-content' ); ?>
 
 <section id="content" class="rtp-content-section <?php echo $rtp_content_grid_class; ?>">
 <?php rtp_hook_begin_content(); ?>
@@ -74,10 +73,10 @@ $rtp_content_grid_class = apply_filters('rtp_set_full_width_grid_class', 'large-
                     <h4>Block Grid</h4>
 
                     <ul class="small-block-grid-2 large-block-grid-4">
-                        <li><img class="th" src="<?php echo RTP_CHILD_IMG; ?>/demos/demo1.jpg"></li>
-                        <li><img class="th" src="<?php echo RTP_CHILD_IMG; ?>/demos/demo2.jpg"></li>
-                        <li><img class="th" src="<?php echo RTP_CHILD_IMG; ?>/demos/demo3.jpg"></li>
-                        <li><img class="th" src="<?php echo RTP_CHILD_IMG; ?>/demos/demo4.jpg"></li>
+                        <li><img class="th" src="<?php echo RTP_CHILD_IMG; ?>/demos/demo1.jpg" alt="demo1" /></li>
+                        <li><img class="th" src="<?php echo RTP_CHILD_IMG; ?>/demos/demo2.jpg" alt="demo2" /></li>
+                        <li><img class="th" src="<?php echo RTP_CHILD_IMG; ?>/demos/demo3.jpg" alt="demo3" /></li>
+                        <li><img class="th" src="<?php echo RTP_CHILD_IMG; ?>/demos/demo4.jpg" alt="demo4" /></li>
                     </ul>
 
                     <hr>
@@ -164,11 +163,11 @@ $rtp_content_grid_class = apply_filters('rtp_set_full_width_grid_class', 'large-
 
                     <div>
                         <ul class="clearing-thumbs" data-clearing>
-                            <li><a class="th" href="<?php echo RTP_CHILD_IMG; ?>/demos/demo1.jpg"><img data-caption="Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum." src="<?php echo RTP_CHILD_IMG; ?>/demos/demo1-th.jpg"></a></li>
-                            <li><a class="th" href="<?php echo RTP_CHILD_IMG; ?>/demos/demo2.jpg"><img src="<?php echo RTP_CHILD_IMG; ?>/demos/demo2-th.jpg"></a></li>
-                            <li><a class="th" href="<?php echo RTP_CHILD_IMG; ?>/demos/demo3.jpg"><img data-caption="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus." src="<?php echo RTP_CHILD_IMG; ?>/demos/demo3-th.jpg"></a></li>
-                            <li><a class="th" href="<?php echo RTP_CHILD_IMG; ?>/demos/demo4.jpg"><img src="<?php echo RTP_CHILD_IMG; ?>/demos/demo4-th.jpg"></a></li>
-                            <li><a class="th" href="<?php echo RTP_CHILD_IMG; ?>/demos/demo5.jpg"><img data-caption="Integer posuere erat a ante venenatis dapibus posuere velit aliquet." src="<?php echo RTP_CHILD_IMG; ?>/demos/demo5-th.jpg"></a></li>
+                            <li><a class="th" href="<?php echo RTP_CHILD_IMG; ?>/demos/demo1.jpg"><img alt="demo5" data-caption="Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum." src="<?php echo RTP_CHILD_IMG; ?>/demos/demo1-th.jpg" /></a></li>
+                            <li><a class="th" href="<?php echo RTP_CHILD_IMG; ?>/demos/demo2.jpg"><img alt="demo6" src="<?php echo RTP_CHILD_IMG; ?>/demos/demo2-th.jpg" /></a></li>
+                            <li><a class="th" href="<?php echo RTP_CHILD_IMG; ?>/demos/demo3.jpg"><img alt="demo7" data-caption="Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus." src="<?php echo RTP_CHILD_IMG; ?>/demos/demo3-th.jpg" /></a></li>
+                            <li><a class="th" href="<?php echo RTP_CHILD_IMG; ?>/demos/demo4.jpg"><img alt="demo8" src="<?php echo RTP_CHILD_IMG; ?>/demos/demo4-th.jpg" /></a></li>
+                            <li><a class="th" href="<?php echo RTP_CHILD_IMG; ?>/demos/demo5.jpg"><img alt="demo9" data-caption="Integer posuere erat a ante venenatis dapibus posuere velit aliquet." src="<?php echo RTP_CHILD_IMG; ?>/demos/demo5-th.jpg" /></a></li>
                         </ul>
                     </div>
 
@@ -262,7 +261,7 @@ $rtp_content_grid_class = apply_filters('rtp_set_full_width_grid_class', 'large-
                     <div id="contentDrop" class="f-dropdown content medium" data-dropdown-content>
                         <h4>Title</h4>
                         <p>Some text that people will think is awesome! Some text that people will think is awesome! Some text that people will think is awesome!</p>
-                        <img src="<?php echo RTP_CHILD_IMG; ?>/demos/demo1.jpg">
+                        <img alt="demo10" src="<?php echo RTP_CHILD_IMG; ?>/demos/demo1.jpg" />
                         <p>More test.</p>
                         <a href="#" class="button">Button</a>
                     </div>
@@ -669,8 +668,8 @@ $rtp_content_grid_class = apply_filters('rtp_set_full_width_grid_class', 'large-
 
                     <h4>Thumbnails</h4>
 
-                    <p><a class="th" href="<?php echo RTP_CHILD_IMG; ?>/demos/demo1.jpg"><img src="<?php echo RTP_CHILD_IMG; ?>/demos/demo1-th.jpg"></a></p>
-                    <img class="th" src="<?php echo RTP_CHILD_IMG; ?>/demos/demo2-th.jpg">
+                    <p><a class="th" href="<?php echo RTP_CHILD_IMG; ?>/demos/demo1.jpg"><img src="<?php echo RTP_CHILD_IMG; ?>/demos/demo1-th.jpg" alt="demo11" /></a></p>
+                    <img class="th" src="<?php echo RTP_CHILD_IMG; ?>/demos/demo2-th.jpg" alt="demo12" />
 
                     <hr>
 
@@ -923,4 +922,4 @@ $rtp_content_grid_class = apply_filters('rtp_set_full_width_grid_class', 'large-
 
 </section><!-- #content -->
 
-<?php get_footer(); ?>
+<?php get_footer();

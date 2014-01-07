@@ -131,8 +131,9 @@ function rtp_orbit_slider ( WP_Query $slider_q = null, $slide_number = 100, $con
         }
 
         $slider_html .= '</ul></div>';
-        if ( $slider_pagination )
+        if ( $slider_pagination ) {
             echo $slider_html;
+        }
     }
     wp_reset_postdata ();
 }
