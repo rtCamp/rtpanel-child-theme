@@ -6,6 +6,7 @@
 @import "google-custom-search";
 @import "pagenavi";
 @import "woocommerce";
+@import "jetpack";
 @import "gravity-form-support";
 @import "ninja-forms";
 @import "contact-form-7";
@@ -43,6 +44,11 @@
     @include rtp-woocommerce();
 }
 
+// Jetpack
+@if $load-jetpack-styles {
+    @include rtp-jetpack();
+}
+
 // Gravity Form
 @if $load-gravity-form-styles {
     @include rtp-gravity-form-style();
@@ -51,6 +57,11 @@
 // Ninja Forms
 @if $load-ninja-forms-styles {
     @include rtp-ninja-forms-style();
+}
+
+// Contact Form 7
+@if $load-contact-form-7-styles {
+    @include rtp-contact-form-7-style();
 }
 
 // rtMedia

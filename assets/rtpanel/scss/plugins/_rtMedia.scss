@@ -14,6 +14,7 @@
                 .rtmedia-like { padding-left: rem-calc(10); padding-right: rem-calc(13); }
                 .rtmedia-like span { margin-right: rem-calc(6); }
             }
+           #details-tab .rt-form-select{ margin-left: rem-calc(16); }
         }
 
         input[type="button"], button, .button, input[type="submit"] { 
@@ -35,5 +36,9 @@
         ul.rtmedia-list .rtmedia-list-item { height: auto; }
 
         ~ .rtp-readmore { display: none; }
-    }
+    }    
+            #rtMedia-galary-next{ color: $link-color; 
+                    &:hover{ background-color: #DDDDDD; color: $link-hover-color; }
+            }
+        .post-content .rtmedia-container{ margin-bottom: 10px; }
 }
