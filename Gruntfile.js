@@ -69,11 +69,14 @@ module.exports = function(grunt) {
         // Ref. https://npmjs.org/package/grunt-contrib-concat
         concat: {
             options: {
-                banner: '/*! \n\* Concat JS libraries to single js file to reduce http request.\n\* This will include modernizr.js, foundation.min.js and jquery.sidr.min.js \n\* \n\* @since rtPanel 4.1.3\n\*/ '
+                banner: '/*! \n\* Concat JS libraries to single js file to reduce http request.\n\* This will include modernizr.js, foundation.min.js and jquery.sidr.min.js \n\* \n\* @since rtPanel 4.1.4\n\*/ '
             },
             dist: {
-                src: ['assets/foundation/bower_components/foundation/js/vendor/custom.modernizr.js', 'assets/foundation/bower_components/foundation/js/foundation.min.js', 'js/jquery.sidr.min.js'],
-                dest: 'js/rtp-concat-lib.js'
+                src: [
+                    'js/jquery.cycle2.min.js',
+                    'js/rtp-custom-scripts.js'
+                ],
+                dest: 'js/rtp-concat-child-lib.js'
             }
         },
 
@@ -83,7 +86,7 @@ module.exports = function(grunt) {
             options: {
                 backup_dir: "backups/",
                 rsync_args: ['-avz'],
-                exclusions: ['Gruntfile.js', '.git/', 'tmp/*', 'backups/', 'wp-config.php', 'composer.json', 'composer.lock', 'README.md', '.gitignore', 'package.json', 'node_modules', '.sass-cache', 'npm-debug.log', '.scss-cache']
+                exclusions: ['Gruntfile.js', '.bower.json', '.editorconfig', '.travis.yml', '.git/', '.svn/', 'tmp/*', 'wp-config.php', 'composer.json', 'composer.lock', '.gitignore', 'package.json', 'node_modules', '.sass-cache', 'npm-debug.log', '.scss-cache']
             },
 
             local: {
@@ -119,9 +122,6 @@ module.exports = function(grunt) {
             }
         }
     });
-
-    // rename tasks
-    // grunt.renameTask('rsync', 'deploy');
 
     // register task
     // grunt.registerTask('imagemin', ['imagemin']);

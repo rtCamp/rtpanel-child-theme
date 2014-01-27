@@ -1,6 +1,7 @@
 // ***** Common BuddyPress Style ***** //
 @mixin rtp-buddypress-style() {
     .buddypress {
+        #content div.item-list-tabs ul li.last select{ padding-right: rem-calc(8);}
         .hentry { border-bottom: 0; }
         .standard-form {
             textarea, #{$form-input-text}, select { width: auto; }
@@ -40,7 +41,7 @@
             }
             div.dir-search { margin: rem-calc(-43 0 10); }
             label { display: inline-block; margin: 0; }
-            input[type="button"], button, .button, input[type="submit"], a.button, {
+            button, .button, input[type="submit"], a.button, input[type="button"] {
                 @include rtp-button(); @include rtp-button-shadow(); @include button-size($button-tny); text-shadow: none; background-image: none; text-decoration: none;
                 &:hover, &:focus { background-image: none; border: 0; }
             }
@@ -70,7 +71,7 @@
             #whats-new-options { margin-top: rem-calc(12); }
             input[type="text"], select { display: inline-block; margin-bottom: 0; height: rem-calc(37); }
             select { padding: 5px; width: auto; height: auto; }
-            .item-list-tabs { background-color: #DDDDDD; padding: rem-calc(10 15 0);
+            .item-list-tabs { background-color: $border-color; padding: rem-calc(10 15 0);
                 li {
                     a { background: transparent;
                         span { line-height: 1.8; }
@@ -104,7 +105,7 @@
                 input[type="text"],input[type="password"]{ margin: rem-calc(10 0); }
             }
             #rtMedia-galary-next{ color: $link-color;
-                &:hover{ background-color: #DDDDDD; color: $link-hover-color; }
+                &:hover{ background-color: $border-color; color: $link-hover-color; }
             }
             #profile-edit-form{
                 label{ display: block; }
@@ -119,7 +120,7 @@
                 a{ display: block; color: $link-color;
                     &:hover{ color: $link-hover-color; }
                 }
-                &:hover{ background-color: #DDDDDD;}
+                &:hover{ background-color: $border-color;}
             }
             .standard-form #basic-details-section{
                 #signup_password, #signup_password_confirm{ width : 90%; }
@@ -144,8 +145,8 @@
             }
             .activity .info { border-color: #cb2; }
             div#message.error { clear: both;
-                    p{margin-bottom:0}
-                }
+                p{margin-bottom:0}
+            }
             #group-settings-form{
                 label{ display: block; }
                 #group-name{ margin-bottom: rem-calc(10); }
@@ -153,5 +154,30 @@
         }
         &.settings form .columns{ width: 100%; }
         .clear { clear: both; }
+    }
+    .widget_bp_core_login_widget .logout {
+        @include rtp-button(); @include rtp-button-shadow(); @include button-size($button-tny);
+    }
+    .widget.buddypress.widget_bp_groups_widget,.widget.buddypress.widget_bp_core_friends_widget{
+        ul { margin: 0; }
+        ul li{ list-style: none; }
+        .item-options{ margin: 0; padding: 0.5em 0 1em; }
+        .item-options .selected{ color: $link-hover-color;  background: $border-color; }
+        .item-options a{  background: #CCCCCC;   padding: rem-calc(5 10); }
+        ul.item-list img.avatar{ margin-top: rem-calc(8); }
+    }
+    .buddypress.widget_bp_core_login_widget {
+        #bp-login-widget-form { @include rtp-border(); padding: rem-calc(20); margin: rem-calc(20 0);
+            input[type="text"], input[type="password"]{ width: 100%;}
+            #bp-login-widget-submit{ float: right; margin-right: 0;}
+        }               
+    }
+    .widget_bp_core_friends_widget{
+        li { border: 0 none; margin-bottom: 0; padding: 0; width: 100%; } 
+    }
+    .widget.buddypress div.item-meta,
+    .widget.buddypress div.item-content {
+        margin-left: rem-calc(30);
+        span.activity{ font-size: rem-calc(12);}
     }
 }
