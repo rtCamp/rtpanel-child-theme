@@ -76,11 +76,9 @@ add_action( 'init', 'rtp_remove_parent_hooks' );
   * @since rtPanelChild 1.0
   */
 function rtp_custom_scripts_and_styles() {
-    /* Uncomment the following lines if using the jQuery Cycle2 Plugin for the slider. */
-    //wp_enqueue_script( 'jquery-cycle', RTP_CHILD_JS . '/jquery.cycle2.min.js', array( 'jquery' ), '', true );
 
-    /* Include Custom Script */
-    //wp_enqueue_script( 'rtp-custom-script', RTP_CHILD_JS . '/rtp-custom-scripts.js', array( 'jquery' ), '', true );
+    /* Include Script */
+    //wp_enqueue_script( 'rtp-child-package-min', RTP_CHILD_JS . '/rtp-child-package-min.js', array( 'jquery' ), '', true );
 
     /* Include styles */
     //wp_enqueue_style( 'rtp-custom-style', RTP_CHILD_CSS . '/custom-style.css' );
