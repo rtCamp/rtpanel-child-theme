@@ -1,0 +1,49 @@
+// ***** Page Builder by SiteOrigin Style ***** //
+@mixin rtp-page-builder-style() {
+
+	.post-content .panel-grid { margin: 0; }
+
+	// Grey Row Box
+	.panel-row-style-grey-box {
+		background-color: lighten( $color-notice, 24 );
+		@include rtp-border($color: $color-notice);
+	}
+
+	// Blue Row Box
+	.panel-row-style-blue-box {
+		background-color: lighten( $color-info, 42 );
+		@include rtp-border($color: $color-info);
+	}
+
+	// Red Row Box
+	.panel-row-style-red-box {
+		background-color: lighten( $color-error, 40 );
+		@include rtp-border($color: $color-error);
+	}
+
+	// Green Row Box
+	.panel-row-style-green-box {
+		background-color: lighten( $color-success, 38 );
+		@include rtp-border($color: $color-success);
+	}
+
+	// Orange Row Box
+	.panel-row-style-orange-box {
+		background-color: lighten( $color-warning, 38 );
+		@include rtp-border($color: $color-warning);
+	}
+
+	.panel-row-style-grey-box,
+	.panel-row-style-blue-box,
+	.panel-row-style-red-box,
+	.panel-row-style-green-box,
+	.panel-row-style-orange-box {
+		padding: rem-calc(25 20);
+		overflow: hidden;
+
+		.layout-full & {
+			margin: rem-calc(0 -1000);
+			padding: rem-calc(25 1000 25 1000);
+		}
+	}
+}

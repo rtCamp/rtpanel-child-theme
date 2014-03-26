@@ -9,6 +9,7 @@
 @import "jetpack";
 @import "gravity-form-support";
 @import "ninja-forms";
+@import "page-builder";
 @import "contact-form-7";
 @import "rtMedia";
 @import "yarpp";
@@ -57,6 +58,11 @@
 // Ninja Forms
 @if $load-ninja-forms-styles {
     @include rtp-ninja-forms-style();
+}
+
+// Page Builder by SiteOrigin
+@if $load-page-builder-styles {
+    @include rtp-page-builder-style();
 }
 
 // Contact Form 7
