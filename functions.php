@@ -18,3 +18,7 @@
 foreach( glob ( get_stylesheet_directory() . "/lib/*.php" ) as $lib_filename ) {
     require_once( $lib_filename );
 }
+
+global $content_width, $max_content_width;
+$content_width     = ( isset( $content_width ) ) ? $content_width : 780;
+$max_content_width = ( isset( $max_content_width ) ) ? $max_content_width : 1200;
