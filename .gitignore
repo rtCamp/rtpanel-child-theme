@@ -3,3 +3,7 @@
 scss/.sass-cache/
 node_modules
 npm-debug.log
+.DS_Store
+.bower.json
+.editorconfig
+.travis.yml
